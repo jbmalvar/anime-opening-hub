@@ -1,0 +1,66 @@
+:root {
+    --background-color: #121212; /* Dark background */
+    --text-color: #ffffff;      /* Light text */
+    --accent-color: #1e88e5;    /* Optional accent color */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+.App {
+    max-width: 1400px;
+    margin: 0 auto; /* Center the content horizontally */
+}
+.topBar {
+    border-bottom: 4px solid black;
+    margin: 20px;
+}
+
+.topTitle {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.structureFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    font-size: 24px;
+    margin: 20px;
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .topBar {
+        margin:auto; /* Center the top bar on small screens */
+    }
+
+    .rightSide {
+        gap: auto; /* Reduce spacing between items */
+        font-size: 14px; /* Adjust font size for smaller screens */
+        margin: 10px;
+    }
+
+    .topTitle {
+        font-size: 20px;
+        text-align: center;
+    }
+}
