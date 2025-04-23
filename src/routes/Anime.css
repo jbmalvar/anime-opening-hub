@@ -6,6 +6,19 @@
     align-items: center; /* Center items vertically (optional) */
 }
 
+.animeButtonsContainer {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if applicable) */
+    margin-top: 20px; /* Optional: Add spacing above the buttons */
+    gap: 10px; /* Optional: Add spacing between buttons */
+}
+
+.buts28 {
+    width: 6%;
+    height: 30px;
+}
+
 @media (max-width: 768px) {
     .AnimeContainer {
         margin: 15px;

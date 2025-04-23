@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import './AnimeComp.css'
 
-
-function AnimeComp() {
+function AnimeComp({ imageUrl, title}) {
+  const [anime, setAnime] = useState({});
+  const [loading, setLoading] = useState(true);
 
   return (
     <div className="AnimeComp">
         <div className="animeCompContainer">
             <div className="imageWrapper">
-                <img src="https://m.media-amazon.com/images/M/MV5BNjAxMmFjZjgtYjM1ZS00NzdmLTliZDktZmIyMzU5YTBlNDBmXkEyXkFqcGc@._V1_.jpg" className="animeImg"></img>
-                <label className="animeTitle">Apothecary Diaries</label>
+                <img src={imageUrl} className="animeImg"></img>
+                <label className="animeTitle">{title}</label>
             </div>
         </div>
     </div>
