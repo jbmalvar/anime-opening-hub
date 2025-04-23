@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import './Search.css'
+import './Home.css'
 import Post from '../components/Post'
 
 
-function Search() {
+function Home() {
 
   return (
-    <div className="Search">
+    <div className="Home">
         <div className ="SearchContainer">
             <div className = "titleHolder">
                 <h1 className="searchTitleH1">Search For Post Here</h1>
@@ -25,4 +25,4 @@ function Search() {
   )
 }
 
-export default Search
+export default Home

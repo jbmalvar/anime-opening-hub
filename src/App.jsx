@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { Link, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
-import Search from './routes/Search'
+import Search from './routes/Home'
 import Create from './routes/Create'
+import Anime from './routes/Anime'
+import About from './routes/About'
 
 
 function App() {
@@ -16,14 +18,20 @@ function App() {
             <span style={{ color: 'red' }}>Hub</span>
           </div>
           <div className="rightSide">
-            <a>About</a>
-            <a>Search</a>
-            <a>Animes</a>
+            <Link to="/home"><a>Home</a></Link>
+            <Link to="/anime"><a>Animes</a></Link>
+            <Link to="/about"><a>About</a></Link>
           </div>
         </div>
       </nav>
       <div className="main">
-        <Create></Create>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Search />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/anime" element={<Anime />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
     </div>
   )

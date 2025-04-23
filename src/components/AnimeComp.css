@@ -1,0 +1,36 @@
+.imageWrapper {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    margin-top: 2%;
+    margin-left: 5%;
+    transition: transform 0.3s ease; /* Smooth transition for the pop-out effect */
+}
+
+.imageWrapper:hover {
+    transform: scale(1.3); /* Slightly enlarge the imageWrapper on hover */
+}
+
+.animeImg {
+    width: 160px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.animeTitle {
+    position: absolute;
+    bottom: 0; /* Align to the bottom of the image */
+    left: 0;
+    width: 100%; /* Match the width of the imageWrapper */
+    height: 20%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Add background for readability */
+    display: flex; /* Use Flexbox for centering */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    padding: 5px 0;
+    text-align: center; /* Center the text */
+    font-size: 16px;
+    border-bottom-left-radius: 8px; /* Match the image's border radius */
+    border-bottom-right-radius: 8px; /* Match the image's border radius */
+}

@@ -1,0 +1,14 @@
+.AnimeContainer {
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: repeat(7, 1fr); /* Create 7 equal-width columns */
+    gap: 16px; /* Add spacing between items (optional) */
+    justify-items: center; /* Center items horizontally (optional) */
+    align-items: center; /* Center items vertically (optional) */
+}
+
+@media (max-width: 768px) {
+    .AnimeContainer {
+        margin: 15px;
+        grid-template-columns: repeat(2, 1fr); /* Display 2 items per row on smaller screens */
+    }
+}
