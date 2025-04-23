@@ -16,12 +16,14 @@ body {
     max-width: 1400px;
     margin: 0 auto; /* Center the content horizontally */
 }
+
 .topBar {
     border-bottom: 4px solid black;
     margin: 20px;
 }
 
 .topTitle {
+    font-family: 'Verdana', Arial;
     font-size: 36px;
     font-weight: bold;
     color: white;
@@ -46,6 +48,7 @@ body {
     font-size: 24px;
     margin: 20px;
     margin-right: 20px;
+    font-family: 'Verdana', Arial;
 }
 
 @media (max-width: 768px) {
@@ -54,13 +57,12 @@ body {
     }
 
     .rightSide {
-        gap: auto; /* Reduce spacing between items */
+        gap: 10px; /* Reduce spacing between items */
         font-size: 14px; /* Adjust font size for smaller screens */
-        margin: 10px;
     }
 
     .topTitle {
-        font-size: 20px;
+        font-size: 16px;
         text-align: center;
     }
 }

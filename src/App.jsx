@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
+import Search from './routes/Search'
 
 
 function App() {
@@ -21,9 +22,7 @@ function App() {
         </div>
       </nav>
       <div className="main">
-        <Routes>
-          
-        </Routes>
+        <Search />
       </div>
     </div>
   )

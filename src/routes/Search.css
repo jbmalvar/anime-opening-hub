@@ -1,0 +1,53 @@
+.SearchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.searchInput {
+    width: 90%; /* Make it responsive */
+    padding: 10px 15px; /* Add padding for better spacing */
+    font-size: 16px; /* Increase font size for readability */
+    border: 2px solid var(--accent-color); /* Add a border with accent color */
+    border-radius: 8px; /* Add rounded corners */
+    outline: none; 
+}
+
+
+.searchInput::placeholder {
+    color: #aaa; /* Style the placeholder text */
+    font-style: italic; /* Make it italic for differentiation */
+}
+
+.sortSelect {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.sortSelect:focus {
+    border-color: #1e88e5; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5); /* Add a subtle glow */
+}
+
+.sortSelect option {
+    background-color: #ffffff; /* Ensure options have a clean background */
+    color: #333; /* Set text color for options */
+}
+
+.sortContainer {
+    display: flex;
+    align-items: center; /* Align label and dropdown vertically */
+    justify-content: flex-end; /* Push content to the right */
+    width: 93%; /* Match the width of searchInput */
+    margin: 10px auto 0; /* Center horizontally and add spacing from the top */
+    gap: 8px; /* Add spacing between label and dropdown */
+}
