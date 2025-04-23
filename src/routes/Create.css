@@ -20,8 +20,16 @@
     outline: none;
 }
 
+.createButtonContainerForCreate {
+    margin-left: 2%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between; /* Adds space between buttons */
+    gap: 10px; /* Optional: Adds consistent spacing between buttons */
+    margin-top: 20px; /* Optional: Adds spacing above the button container */
+}
+
 .createButtonForCreate {
-    align-self: flex-end; /* Aligns the button to the right within the flex container */
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -30,4 +38,3 @@
     margin-right: 9%;
     width: 100px;
 }
-  

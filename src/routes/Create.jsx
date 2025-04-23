@@ -1,6 +1,6 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Create.css'
-
 
 function Create() {
 
@@ -20,7 +20,10 @@ function Create() {
                 <h2>Content:</h2>
                 <input type="text" placeholder="Post Title" className="titleInput" />
             </div>
-            <button className="createButtonForCreate">Post</button>
+            <div className="createButtonContainerForCreate">
+                <Link to="/home"><button className="createButtonForCreate"> Back </button></Link>
+                <Link to="/home"><button className="createButtonForCreate"> Post </button></Link>
+            </div>
         </div>
     </div>
   )

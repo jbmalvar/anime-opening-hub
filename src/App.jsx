@@ -18,9 +18,9 @@ function App() {
             <span style={{ color: 'red' }}>Hub</span>
           </div>
           <div className="rightSide">
-            <Link to="/home"><a>Home</a></Link>
-            <Link to="/anime"><a>Animes</a></Link>
-            <Link to="/about"><a>About</a></Link>
+            <Link to="/home" className = "links">Home</Link>
+            <Link to="/anime" className = "links">Anime</Link>
+            <Link to="/about" className = "links">About</Link>
           </div>
         </div>
       </nav>
