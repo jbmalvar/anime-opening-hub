@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Search from './routes/Search'
+import Create from './routes/Create'
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         </div>
       </nav>
       <div className="main">
-        <Search />
+        <Create></Create>
       </div>
     </div>
   )
