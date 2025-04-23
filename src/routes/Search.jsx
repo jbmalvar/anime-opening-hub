@@ -8,7 +8,10 @@ function Search() {
   return (
     <div className="Search">
         <div className ="SearchContainer">
-            <h1>Search For Post Here</h1>
+            <div className = "titleHolder">
+                <h1 className="searchTitleH1">Search For Post Here</h1>
+                <button className="createPostBut">+ Create Post</button>
+            </div>
             <input type="text" placeholder="Search using by using Anime or Post Title" className="searchInput" />
             <span className = "sortContainer">
                 <label>Sort: </label>

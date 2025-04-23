@@ -15,8 +15,8 @@ function App() {
             <span style={{ color: 'red' }}>Hub</span>
           </div>
           <div className="rightSide">
+            <a>About</a>
             <a>Search</a>
-            <a>Create</a>
             <a>Animes</a>
           </div>
         </div>

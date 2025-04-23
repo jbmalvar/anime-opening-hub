@@ -6,6 +6,38 @@
     padding: 20px;
 }
 
+.titleHolder {
+    position: relative; /* Make the container a positioning context */
+    width: 100%; /* Ensure it spans the full width of the parent */
+    margin: 20px;
+}
+
+.searchTitleH1 {
+    padding-left: 4%;
+    font-size: 36px; /* Increase font size for better visibility */
+}
+
+.createPostBut {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white; 
+    border: 2px solid black;
+    border-radius: 100px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: black;
+    transition: box-shadow 0.3s ease;
+}
+
+.createPostBut:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 0.9); /* Intensify glow on hover */
+}
+
 .searchInput {
     width: 90%; /* Make it responsive */
     padding: 10px 15px; /* Add padding for better spacing */
@@ -50,4 +82,19 @@
     width: 93%; /* Match the width of searchInput */
     margin: 10px auto 0; /* Center horizontally and add spacing from the top */
     gap: 8px; /* Add spacing between label and dropdown */
+}
+
+@media (max-width: 768px) {
+    .searchTitleH1 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .createPostBut {
+        padding: 10px 10px;
+    }
+
+    .searchInput {
+        height: 10px;
+    }
 }
