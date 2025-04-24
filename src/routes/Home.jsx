@@ -41,6 +41,7 @@ function Home() {
         <div className="PostsContainer">
             {posts.map((post) => (
                 <Post
+                    key={post.id}
                     id={post.id}
                     user={post.user}
                     postDate={post.created_at}

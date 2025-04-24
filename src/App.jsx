@@ -30,6 +30,7 @@ function App() {
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Search />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/edit/:id" element={<Create />} />
           <Route path="/anime" element={<Anime />} />
           <Route path="/anime-details/:id" element={<AnimeDetails />} />
           <Route path="/about" element={<About />} />

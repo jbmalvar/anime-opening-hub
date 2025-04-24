@@ -2,8 +2,9 @@ import './Post.css';
 import { useState } from 'react';
 import { supabase } from '../client';
 
-function Post({ id, user, postDate, title, anime, imageUrl, content, votes }) {
+function Post({ id, user, postDate, title, anime, imageUrl, content, votes: initialVotes }) {
   const [showMenu, setShowMenu] = useState(false);
+  const [votes, setVotes] = useState(initialVotes);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -32,6 +33,22 @@ function Post({ id, user, postDate, title, anime, imageUrl, content, votes }) {
     window.location.href = `/edit/${id}`;
   };
 
+  const handleVote = async (voteType) => {
+    const newVotes = voteType === 'upvote' ? votes + 1 : votes - 1;
+
+    const { error } = await supabase
+      .from('animePosts')
+      .update({ votes: newVotes })
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error updating votes:', error);
+      return;
+    }
+
+    setVotes(newVotes); // Update local state to reflect the change immediately
+  };
+
   return (
     <div className="Post">
       <label className="smallText">User: {user}</label>
@@ -43,9 +60,9 @@ function Post({ id, user, postDate, title, anime, imageUrl, content, votes }) {
       </div>
       <label className="smallText">{content}</label>
       <span className="votes">
-        <button className="upvote">👍</button>
+        <button className="upvote" onClick={() => handleVote('upvote')}>👍</button>
         {votes}
-        <button className="upvote">👎</button>
+        <button className="upvote" onClick={() => handleVote('downvote')}>👎</button>
       </span>
       <div className="menu">
         <button className="menuButton" onClick={toggleMenu}>⋮</button>

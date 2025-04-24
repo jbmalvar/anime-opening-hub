@@ -1,14 +1,78 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { supabase } from '../client'
 import './Create.css'
 
 function Create() {
+    const id = useParams(); // Get the ID from the URL if needed
     const [user, setUser] = useState('');
     const [anime, setAnime] = useState('');
     const [animeId, setAnimeId] = useState('');
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [isEditing, setIsEditing] = useState(false); // New state for edit mode
+
+    useEffect(() => {
+        // Check if editing mode is enabled (e.g., based on URL or props)
+        const editing = window.location.pathname.includes('edit'); // Example logic
+        setIsEditing(editing);
+    }, []);
+
+    useEffect(() => {
+        if (isEditing) {
+            // Fetch the post data based on the ID from the URL
+            const fetchPostData = async () => {
+                const { data, error } = await supabase
+                    .from('animePosts')
+                    .select('*')
+                    .eq('id', id.id) // Use the ID from the URL
+                    .single();
+    
+                if (error) {
+                    console.error('Error fetching post data:', error.message);
+                    return;
+                }
+    
+                if (data) {
+                    setUser(data.user);
+                    setAnime(data.anime);
+                    setAnimeId(data.animeId);
+                    setTitle(data.title);
+                    setContent(data.content);
+                }
+            };
+    
+            fetchPostData();
+        }
+    }, [isEditing, id.id]); // Dependency array ensures this runs only when `isEditing` or `id.id` changes
+
+    const handleEdit = async (event) => {
+        event.preventDefault();
+
+        // Validation check for empty fields
+        if (!user || !anime || !animeId || !title || !content) {
+            alert('All fields are required. Please fill out every field.');
+            return;
+        }
+
+        try {
+            const { data, error } = await supabase
+                .from('animePosts')
+                .update({ user, anime, animeId, title, content })
+                .eq('id', id.id); // Use the ID from the URL
+
+            if (error) {
+                throw error; // Throw error to be caught in the catch block
+            }
+
+            alert('Post updated successfully!');
+            console.log('Post updated:', data);
+            window.location = "/home"; // Redirect only after successful update
+        } catch (error) {
+            console.error('Error updating data:', error.message);
+            alert('An error occurred while updating the post. Please try again.');
+        }
+    }
 
     const createPost = async (event) => {
         event.preventDefault();
@@ -95,9 +159,9 @@ function Create() {
                     <Link to="/home"><button className="createButtonForCreate"> Back </button></Link>
                     <button
                         className="createButtonForCreate"
-                        onClick={createPost}
+                        onClick={isEditing ? handleEdit : createPost}
                     >
-                        Post
+                        {isEditing ? 'Edit' : 'Post'} {/* Dynamic button text */}
                     </button>
                 </div>
             </div>
