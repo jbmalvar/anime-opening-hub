@@ -1,0 +1,60 @@
+.AnimeDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DetailsCont {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    gap: 20px; /* Optional: Add spacing between the two sections */
+    margin: 20px 0; /* Optional: Add margin for spacing */
+}
+
+.AnimeDetailsContainer { 
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 30%;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Inner spacing */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.animImg {
+    width: auto;
+    height: auto;
+    max-width: 300px; /* Ensure it doesn't exceed the container */
+    max-height: 400px; /* Ensure it doesn't exceed the container */
+    border-radius: 8px; /* Rounded corners for the image */
+    align-self: center;
+}
+
+.animDesc {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 12px; /* Font size for description */
+    line-height: 1.5; /* Line height for readability */
+}
+
+.videoContainer {
+    flex: 2; /* Take 2/3 of the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%; /* Ensure it doesn't exceed 2/3 */
+}
+
+.vid {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 450px;
+}

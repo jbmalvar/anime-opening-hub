@@ -5,6 +5,7 @@ import Search from './routes/Home'
 import Create from './routes/Create'
 import Anime from './routes/Anime'
 import About from './routes/About'
+import AnimeDetails from './routes/AnimeDetails'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/home" element={<Search />} />
           <Route path="/create" element={<Create />} />
           <Route path="/anime" element={<Anime />} />
+          <Route path="/anime-details/:id" element={<AnimeDetails />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>

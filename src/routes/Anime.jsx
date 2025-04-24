@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import AnimeComp from '../components/AnimeComp';
 import './Anime.css';
 
@@ -14,7 +15,7 @@ function Anime() {
       setIsLoading(true); // Show loading state
       try {
         const response = await fetch(
-          `${API_URL}/anime?include=animethemes,images&page[size]=28&page[number]=${currentPage}`
+          `${API_URL}/anime?include=images&page[size]=28&page[number]=${currentPage}`
         );
         const data = await response.json();
         console.log(data); // Log the response to inspect its structure
@@ -49,11 +50,16 @@ function Anime() {
     <div className="Anime">
       <div className="AnimeContainer">
         {animeData.map((anime, index) => (
+        <Link 
+          to={`/anime-details/${anime.id}`} // Link to AnimeDetails with anime ID
+          key={anime.id || index} // Use a unique key
+          style={{ textDecoration: 'none' }} // Optional: Remove underline
+        >
           <AnimeComp
-            key={anime.id || index} // Use a unique key
             imageUrl={anime.images?.[0].link || 'default-image-url.jpg'} // Fallback for missing images
             title={anime.name || 'Unknown Title'} // Fallback for missing title
           />
+        </Link>
         ))}
       </div>
       <div className="animeButtonsContainer">
