@@ -12,7 +12,7 @@
     margin: 20px 0; /* Optional: Add margin for spacing */
 }
 
-.AnimeDetailsContainer { 
+.AnimeDetailsContainer {  
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -69,7 +69,7 @@
         max-width: 80%; /* Adjust width for smaller screens */
 
     }
-    
+
     .videoContainer {
         max-width: 90%; /* Adjust width for smaller screens */
     }

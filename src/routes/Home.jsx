@@ -21,7 +21,6 @@ function Home() {
                 </select>
             </span>
         </div>
-        <Post></Post>
     </div>
   )
 }
