@@ -58,3 +58,19 @@
     max-width: 800px;
     max-height: 450px;
 }
+
+@media (max-width: 768px) {
+    .DetailsCont {
+        flex-direction: column; /* Stack the sections vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .AnimeDetailsContainer {
+        max-width: 80%; /* Adjust width for smaller screens */
+
+    }
+    
+    .videoContainer {
+        max-width: 90%; /* Adjust width for smaller screens */
+    }
+}

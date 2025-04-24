@@ -8,9 +8,7 @@ function AnimeDetails() {
     const { id } = useParams(); // Get the anime ID from the URL
     const [anime, setAnime] = useState(null); // State to store anime details
     const [isLoading, setIsLoading] = useState(true); // Loading state
-
-
-    // anime?include=animethemes,images&page[size]=28&page[number]=
+    
     useEffect(() => {
         const fetchAnimeDetails = async () => {
             try {
