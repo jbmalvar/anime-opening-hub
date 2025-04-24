@@ -8,4 +8,70 @@
     margin: 16px auto; /* Center horizontally */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
+    position: relative; /* Make the Post container the positioning context */
+}
+
+.smallText {
+    font-size: 20px;
+}
+
+.postImgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.postAnimImg {
+    width: 30%;
+    height: auto;
+    align-self: center; /* Center the image horizontally */
+}
+
+.menu {
+    position: absolute; /* Position relative to the Post container */
+    top: 16px; /* Align with the top padding of the Post container */
+    right: 16px; /* Align with the right padding of the Post container */
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color:white;
+}
+
+.menuOptions {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.menuOptions button {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menuOptions button:hover {
+    background-color: #f0f0f0;
+}
+
+.upvote {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.2s ease;
 }
