@@ -1,9 +1,18 @@
 .About {
     display: flex; /* Enable Flexbox */
     justify-content: center; /* Center horizontally */
-    height: 100vh; /* Make the container take the full viewport height */
 }
 
 .AboutContainer {
     text-align: center; /* Center text inside the container */
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+}
+
+.AboutContent {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    flex-direction: column; /* Stack items vertically */
+    width: 90%;
+    max-width: 500px;
 }

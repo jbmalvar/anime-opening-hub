@@ -6,6 +6,19 @@
     align-items: center; /* Center items vertically (optional) */
 }
 
+.animeSearchBar {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px; /* Optional: Add margin for spacing */
+    gap: 10px; /* Optional: Add spacing between input and button */
+    width: 30%;
+    height: 30px;
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f0f0f0; /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
 .animeButtonsContainer {
     display: flex;
     justify-content: center; /* Centers horizontally */
@@ -19,9 +32,25 @@
     height: 30px;
 }
 
+.searchLocation {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px;
+}
+
 @media (max-width: 768px) {
     .AnimeContainer {
         margin: 15px;
         grid-template-columns: repeat(2, 1fr); /* Display 2 items per row on smaller screens */
+    }
+
+    .animeButtonsContainer{
+        margin-bottom: 20px;
+    }
+
+    .buts28 {
+        width: 20%;
+        height: 30px;
     }
 }

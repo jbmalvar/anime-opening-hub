@@ -57,7 +57,7 @@ function AnimeDetails() {
                         Your browser does not support the video tag.
                     </video>
                     <h1>Audio</h1>
-                    <audio className="audio" controls preload="none">
+                    <audio className="audio" controls preload="auto">
                         <source src={anime.animethemes?.[0]?.animethemeentries?.[0]?.videos?.[0]?.audio.link} type="audio/mpeg" />
                         Your browser does not support the audio tag.
                     </audio>

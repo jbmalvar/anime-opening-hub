@@ -12,7 +12,6 @@ function Post() {
         </span>
         <h2>Title: </h2>
         <label>Anime: </label>
-        <label>Score: </label>
         <img></img>
         <span className = "votes">
             <label>Upvote: </label>
