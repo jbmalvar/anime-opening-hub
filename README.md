@@ -69,16 +69,24 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+![Untitled design (2)](https://github.com/user-attachments/assets/7ef41338-1ac6-4cd9-b67c-2bd806589412)
+
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ... 
+
+Video To Gif Using Canva
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
+Video recording shows me not having it up. I have it up just chose to do it on there. I will post the link below
+
+https://animeophub.netlify.app/
+
 
 Describe any challenges encountered while building the app.
 
