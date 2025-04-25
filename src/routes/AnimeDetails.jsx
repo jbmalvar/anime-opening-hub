@@ -56,6 +56,7 @@ function AnimeDetails() {
                     <h1>{anime.name || 'Unknown Title'}</h1>
                     <img className="animImg" src={anime.images[0].link}></img>
                     <div className="animDesc">
+                        <label><strong>Type: {anime.id}</strong> {}</label>
                         <label><strong>Type: {anime.media_format}</strong> {}</label>
                         <label><strong>Year: {anime.year} {anime.season}</strong> {}</label>
                         <label><strong>Description: {anime.synopsis}</strong> {}</label>

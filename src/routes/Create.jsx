@@ -119,7 +119,7 @@ function Create() {
                     <h2>Anime:</h2>
                     <input
                         type="text"
-                        placeholder="Enter your Anime. Ensure this is correct"
+                        placeholder="Enter your Anime. Ensure this is spelted correctly"
                         className="titleInput"
                         value={anime}
                         onChange={(e) => setAnime(e.target.value)}
@@ -129,7 +129,7 @@ function Create() {
                     <h2>AnimeId:</h2>
                     <input
                         type="text"
-                        placeholder="Enter Anime ID. Ensure this is correct"
+                        placeholder="Enter Anime ID. Ensure this is correct. Please grab the id from it's anime"
                         className="titleInput"
                         value={animeId}
                         onChange={(e) => setAnimeId(e.target.value)}

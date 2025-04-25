@@ -15,8 +15,15 @@ function About() {
           <p>Stuff I wish I got to:</p>
           <ul>
             <li>Route Pages for Anime Pages</li>
-            <li>Overall UI</li>
+            <li>Overall UI feels offputting at times</li>
             <li>Multiple Anime Openings for one anime</li>
+          </ul>
+
+          <p>Guide for making post:</p>
+          <ul>
+            <li>Everything is pretty basic</li>
+            <li>On every anime, there is an id for them ensure you grab the correct one and input it otherwise post will have wrong information</li>
+            <li>Then simply create a post</li>
           </ul>
         </div>
       </div>
