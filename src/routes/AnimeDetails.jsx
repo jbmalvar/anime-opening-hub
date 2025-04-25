@@ -75,7 +75,7 @@ function AnimeDetails() {
                 </div>
             </div>
             <div className="animePost">
-                <h2>Anime Posts</h2>
+                <h2 className="animePostTitleTemp">Anime Posts</h2>
                 <div className="animePostContainer">
                     {posts.length > 0 ? (
                         posts.map((post) => (

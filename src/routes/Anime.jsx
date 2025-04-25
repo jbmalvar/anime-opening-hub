@@ -76,7 +76,7 @@ function Anime() {
           onChange={(e) => setInputValue(e.target.value)} // Update input value
         />
         {searchQuery && (
-          <button className="clearButtonAnime" onClick={handleClearSearch}>
+          <button className="searchButtonAnime" onClick={handleClearSearch}>
             Clear Search
           </button>
         )}

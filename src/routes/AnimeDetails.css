@@ -59,6 +59,14 @@
     max-height: 450px;
 }
 
+.animePost {
+    width: 100%;
+}
+
+.animePostTitleTemp {
+    margin-left: 30px;
+}
+
 @media (max-width: 768px) {
     .DetailsCont {
         flex-direction: column; /* Stack the sections vertically on smaller screens */

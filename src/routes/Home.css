@@ -97,4 +97,16 @@
     .searchInput {
         height: 10px;
     }
+
+    .searchTitleH1 {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .sortContainer {
+        font-size: 12px;
+    }
+
+    .sortSelect {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
 }

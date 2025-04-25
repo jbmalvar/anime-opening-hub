@@ -34,3 +34,17 @@
     border-bottom-left-radius: 8px; /* Match the image's border radius */
     border-bottom-right-radius: 8px; /* Match the image's border radius */
 }
+
+@media (max-width: 768px) {
+    .imageWrapper {
+        width: 120px; /* Adjust width for smaller screens */
+    }
+
+    .animeImg {
+        width: 120px; /* Adjust image size for smaller screens */
+    }
+
+    .animeTitle {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
