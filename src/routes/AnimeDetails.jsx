@@ -1,13 +1,30 @@
 import { useState, useEffect } from 'react';
+import { supabase } from '../client';
 import { useParams } from 'react-router-dom';
 import './AnimeDetails.css';
+import Post from '../components/Post';
+
 
 const API_URL = import.meta.env.VITE_ANIMETHEMES_API_URL;
 
 function AnimeDetails() {
     const { id } = useParams(); // Get the anime ID from the URL
     const [anime, setAnime] = useState(null); // State to store anime details
+    const [posts, setPosts] = useState([]); // State to store posts
     const [isLoading, setIsLoading] = useState(true); // Loading state
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const { data } = await supabase
+                .from('animePosts')
+                .select()
+                .eq('animeId', id);
+            setPosts(data);
+        };
+
+        fetchPosts();
+    }, []);
+    console.log(posts);
     
     useEffect(() => {
         const fetchAnimeDetails = async () => {
@@ -64,7 +81,25 @@ function AnimeDetails() {
             <div className="animePost">
                 <h2>Anime Posts</h2>
                 <div className="animePostContainer">
-            </div>
+                    {posts.length > 0 ? (
+                        posts.map((post) => (
+                            <Post
+                                key={post.id}
+                                id={post.id}
+                                user={post.user}
+                                postDate={post.created_at}
+                                title={post.title}
+                                anime={post.anime}
+                                animeId={post.animeId}
+                                image={post.image}
+                                content={post.content}
+                                votes={post.votes}
+                            />
+                        ))
+                    ) : (
+                        <p>No posts available for this anime. Go make one on home</p>
+                    )}
+                </div>
             </div>
         </div>
     );

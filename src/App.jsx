@@ -35,7 +35,7 @@ function App() {
           <Route path="/anime" element={<Anime />} />
           <Route path="/anime-details/:id" element={<AnimeDetails />} />
           <Route path="/about" element={<About />} />
-          <Route path="/post-details" element={<PostDetails />} />
+          <Route path="/post-details/:id" element={<PostDetails />} />
         </Routes>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import './Post.css';
 import { useState, useEffect } from 'react';
 import { supabase } from '../client';
-
+import { useNavigate } from 'react-router-dom';
 
 const API_URL = import.meta.env.VITE_ANIMETHEMES_API_URL;
 
@@ -9,6 +9,7 @@ function Post({ id, user, postDate, title, anime, animeId, image, content, votes
   const [showMenu, setShowMenu] = useState(false);
   const [votes, setVotes] = useState(initialVotes);
   const [animeImg, setAnimeImg] = useState("");
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -53,6 +54,10 @@ function Post({ id, user, postDate, title, anime, animeId, image, content, votes
     setVotes(newVotes); // Update local state to reflect the change immediately
   };
 
+  const handlePostClick = () => {
+    navigate(`/post-details/${id}`); // Redirect to PostDetails page with the post ID
+  };
+
   useEffect(() => {
     const fetchAnimeImage = async () => {
       try {
@@ -75,7 +80,7 @@ function Post({ id, user, postDate, title, anime, animeId, image, content, votes
   console.log(animeImg);
 
   return (
-    <div className="Post">
+    <div className="Post" onClick={handlePostClick} style={{ cursor: 'pointer' }}>
       <label className="smallText">User: {user}</label>
       <label className="smallText">Post Date: {postDate}</label>
       <h2>{title}</h2>
@@ -86,16 +91,16 @@ function Post({ id, user, postDate, title, anime, animeId, image, content, votes
       <label className="smallText">{content}</label>
       {image && <img className="postImg" src={image} alt={`${title} cover`} />}
       <span className="votes">
-        <button className="upvote" onClick={() => handleVote('upvote')}>👍</button>
+        <button className="upvote" onClick={(e) => { e.stopPropagation(); handleVote('upvote'); }}>👍</button>
         {votes}
-        <button className="upvote" onClick={() => handleVote('downvote')}>👎</button>
+        <button className="upvote" onClick={(e) => { e.stopPropagation(); handleVote('downvote'); }}>👎</button>
       </span>
       <div className="menu">
-        <button className="menuButton" onClick={toggleMenu}>⋮</button>
+        <button className="menuButton" onClick={(e) => { e.stopPropagation(); toggleMenu(); }}>⋮</button>
         {showMenu && (
           <div className="menuOptions">
-            <button onClick={editPost}>Edit</button>
-            <button onClick={deletePost}>Delete</button>
+            <button onClick={(e) => { e.stopPropagation(); editPost(); }}>Edit</button>
+            <button onClick={(e) => { e.stopPropagation(); deletePost(e); }}>Delete</button>
           </div>
         )}
       </div>
