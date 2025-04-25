@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start; /* Align items to the start (default) */
     margin: 0 auto; /* Center the container horizontally */
-    width: fit-content;
+    width: 65%; /* Full width of the parent container */
 }
 
 .postDetailsTitle {
@@ -11,3 +11,172 @@
     flex-direction: column;
     align-items: flex-start;
 }
+
+.postImg {
+    width: 45px; /* Set a fixed width */
+    height: 45px; /* Set a fixed height to make it a square */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image fits within the circle */
+}
+
+.postDetailsTitlePlusImage {
+    display: flex;
+    align-items: center; /* Center the image and title vertically */
+    justify-content: flex-start; /* Align items to the start (default) */
+    gap: 10px; /* Space between the image and title */
+}
+
+.returnBackToHome {
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height to make it a square */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    background-color: rgb(51, 61, 66); /* Make the background transparent */
+    color-scheme: light;
+    border-color: white;
+    font-size: 30px
+}
+
+.returnBackToHome:hover {
+    background-color: red; /* Change background to red */
+    color: white; /* Optional: Change text color to white for contrast */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.postContent {
+    word-break: break-word; /* Break long words to fit within the container */
+    overflow-wrap: break-word; /* Ensure text wraps properly */
+}
+
+.postImage {
+    width: 50%;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 25px;
+    object-fit: cover; /* Ensure the image fits within the container */
+    border: 2px solid white; /* Correctly set border color, width, and style */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+.audioinPost {
+    margin-bottom: 25px;
+}
+
+.postDetailsButtons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-top: 2px solid white; /* Correctly set border color, width, and style */
+    padding-top: 10px; /* Optional: Add padding inside the buttons container */
+}
+
+.commentButton {
+    color-scheme: light;
+    border-color: rgb(234, 237, 239);
+    background-color: #eaedef; /* Make the background transparent */
+    font-size: 24px;
+    height: 30px; /* Set a fixed height for the button */
+    border-radius: 25px; /* Make the button rounded */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+}
+
+.commentContainer {
+    margin: 25px;
+    width: 100%;
+}
+
+.commentMake {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Stretch items to fill the width */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 6px 12px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.commentMake .actions {
+    display: none;
+    gap: 6px;
+    margin-top: auto; /* Push the buttons to the bottom */
+    justify-content: flex-end; /* Align buttons to the right */
+}
+
+.commentMake:focus-within .actions {
+    display: flex;
+}
+
+  .commentMake:focus-within {
+    height: 100px; /* expand when clicked */
+  }
+
+  .commentMake textarea {
+    border: none;
+    outline: none;
+    resize: none; /* Prevent resizing */
+    flex-grow: 1;
+    font-size: 14px;
+    color: #444;
+    background: transparent;
+    width: 100%;
+    height: 100%; /* Ensure it fills the container height */
+    padding: 8px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    overflow-wrap: break-word; /* Ensure long words break to fit */
+    word-break: break-word; /* Ensure text wraps properly */
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+  .commentMake .actions {
+    display: none;
+    gap: 6px;
+  }
+  
+  .commentMake:focus-within .actions {
+    display: flex;
+  }
+
+  .commentMake input:focus::placeholder {
+    color: transparent; /* Make the placeholder text invisible */
+}
+  
+  .commentMake .actions button {
+    font-size: 13px;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .commentMake .cancel {
+    background: transparent;
+    color: #777;
+  }
+  
+  .commentMake .submit {
+    background: #007bff;
+    color: white;
+  }
+  
+  .commentMake button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .commentMake .icon {
+    font-size: 14px;
+    color: #777;
+  }
