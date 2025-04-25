@@ -10,6 +10,7 @@ function Create() {
     const [animeId, setAnimeId] = useState('');
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [image, setImageUrl] = useState('');
     const [isEditing, setIsEditing] = useState(false); // New state for edit mode
 
     useEffect(() => {
@@ -39,6 +40,7 @@ function Create() {
                     setAnimeId(data.animeId);
                     setTitle(data.title);
                     setContent(data.content);
+                    setImageUrl(data.image);
                 }
             };
     
@@ -58,7 +60,7 @@ function Create() {
         try {
             const { data, error } = await supabase
                 .from('animePosts')
-                .update({ user, anime, animeId, title, content })
+                .update({ user, anime, animeId, title, content, image})
                 .eq('id', id.id); // Use the ID from the URL
 
             if (error) {
@@ -86,7 +88,7 @@ function Create() {
         try {
             const { data, error } = await supabase
                 .from('animePosts')
-                .insert({ user: user, anime: anime, animeId: animeId, title: title, content: content });
+                .insert({ user: user, anime: anime, animeId: animeId, title: title, content: content, image: image}) // Added votes field with default value;
 
             if (error) {
                 throw error; // Throw error to be caught in the catch block
@@ -153,6 +155,16 @@ function Create() {
                         className="titleInput"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
+                    />
+                </div>
+                <div className="titleHolder">
+                    <h2>Image(Optional):</h2>
+                    <input
+                        type="text"
+                        placeholder="Enter an image url"
+                        className="titleInput"
+                        value={image}
+                        onChange={(e) => setImageUrl(e.target.value)}
                     />
                 </div>
                 <div className="createButtonContainerForCreate">
