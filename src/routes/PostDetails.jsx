@@ -64,6 +64,34 @@ function PostDetails() {
     setVotes(newVotes); // Update local state to reflect the change immediately
   };
 
+  const handleDeleteComment = async (commentIndex) => {
+    try {
+      // Remove the comment at the specified index
+      const updatedComments = post.comment.filter((_, index) => index !== commentIndex);
+  
+      // Update the comments array in the database
+      const { error: updateError } = await supabase
+        .from('animePosts')
+        .update({ comment: updatedComments })
+        .eq('id', id);
+  
+      if (updateError) {
+        throw updateError;
+      }
+  
+      // Update the local state to reflect the changes
+      setPost((prevPost) => ({
+        ...prevPost,
+        comment: updatedComments,
+      }));
+  
+      alert('Comment deleted successfully!');
+    } catch (error) {
+      console.error('Error deleting comment:', error.message);
+      alert('An error occurred while deleting the comment. Please try again.');
+    }
+  };
+
   const handleComment = async () => {
     const commentInput = document.getElementById('commentInput');
     const comment = commentInput.value.trim(); // Get the comment value
@@ -177,9 +205,15 @@ function PostDetails() {
               <h3>Comments</h3>
               {post.comment && post.comment.length > 0 ? (
                 post.comment.map((comment, index) => (
-                  <p key={index} className="comment">
-                    {comment}
-                  </p>
+                  <div key={index} className="comment">
+                    <p>{comment}</p>
+                    <button
+                      className="deleteComment"
+                      onClick={() => handleDeleteComment(index)} // Pass the index of the comment to delete
+                    >
+                      Delete
+                    </button>
+                  </div>
                 ))
               ) : (
                 <p>No comments yet. Be the first to comment!</p>
