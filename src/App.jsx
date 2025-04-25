@@ -20,7 +20,7 @@ function App() {
             <span style={{ color: 'red' }}>Hub</span>
           </div>
           <div className="rightSide">
-            <Link to="/home" className = "links">Home</Link>
+            <Link to="/" className = "links">Home</Link>
             <Link to="/anime" className = "links">Anime</Link>
             <Link to="/about" className = "links">About</Link>
           </div>
@@ -28,8 +28,7 @@ function App() {
       </nav>
       <div className="main">
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Search />} />
+          <Route path="/" element={<Search />} />
           <Route path="/create" element={<Create />} />
           <Route path="/edit/:id" element={<Create />} />
           <Route path="/anime" element={<Anime />} />

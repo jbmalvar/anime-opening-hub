@@ -57,6 +57,11 @@ function Create() {
             return;
         }
 
+        if (isNaN(animeId)) {
+            alert('Anime ID must be a number. Please enter a valid number. LOOK AT THE ANIME ID IN THE ANIME PLEASE');
+            return;
+        }
+
         try {
             const { data, error } = await supabase
                 .from('animePosts')
@@ -68,7 +73,7 @@ function Create() {
             }
 
             alert('Post updated successfully!');
-            window.location = "/home"; // Redirect only after successful update
+            window.location = "/"; // Redirect only after successful update
         } catch (error) {
             console.error('Error updating data:', error.message);
             alert('An error occurred while updating the post. Please try again.');
@@ -84,6 +89,11 @@ function Create() {
             return;
         }
 
+        if (isNaN(animeId)) {
+            alert('Anime ID must be a number. Please enter a valid number. LOOK AT THE ANIME ID IN THE ANIME PLEASE');
+            return;
+        }
+
         try {
             const { data, error } = await supabase
                 .from('animePosts')
@@ -94,7 +104,7 @@ function Create() {
             }
 
             alert('Post created successfully!');
-            window.location = "/home"; // Redirect only after successful insertion
+            window.location = "/"; // Redirect only after successful insertion
         } catch (error) {
             console.error('Error inserting data:', error.message);
             alert('An error occurred while creating the post. Please try again.');
@@ -129,7 +139,7 @@ function Create() {
                     <h2>AnimeId:</h2>
                     <input
                         type="text"
-                        placeholder="Enter Anime ID. Ensure this is correct. Please grab the id from it's anime"
+                        placeholder="Enter Anime ID. Ensure it's a number. Ensure this is correct. Please grab the id from it's anime"
                         className="titleInput"
                         value={animeId}
                         onChange={(e) => setAnimeId(e.target.value)}
@@ -166,7 +176,7 @@ function Create() {
                     />
                 </div>
                 <div className="createButtonContainerForCreate">
-                    <Link to="/home"><button className="createButtonForCreate"> Back </button></Link>
+                    <Link to="/"><button className="createButtonForCreate"> Back </button></Link>
                     <button
                         className="createButtonForCreate"
                         onClick={isEditing ? handleEdit : createPost}

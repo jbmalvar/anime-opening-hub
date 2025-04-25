@@ -144,7 +144,7 @@ function PostDetails() {
       ) : post ? (
         <div className="PostDetailsContainer">
           <div className="postDetailsTitlePlusImage">
-            <Link to="/home">
+            <Link to="/">
               <button className="returnBackToHome">⇦</button>
             </Link>
             {anime?.images?.[0]?.link && (
