@@ -1,89 +1,68 @@
 .Post {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%; /* Reduce width for a tighter layout */
+    margin: 8px auto; /* Reduce vertical spacing */
+    padding: 8px; /* Reduce padding inside the container */
     border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px auto; /* Center horizontally */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px; /* Slightly smaller border radius */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for compactness */
     font-family: Arial, sans-serif;
-    position: relative; /* Make the Post container the positioning context */
+    position: relative;
 }
 
 .smallText {
-    font-size: 20px;
-}
-
-.postImgContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 16px;
-    width: 100%;
-}
-
-.postAnimImg {
-    width: 30%;
-    height: auto;
-    align-self: center; /* Center the image horizontally */
+    font-size: 12px; /* Smaller font size for compact text */
+    margin-bottom: 4px; /* Reduce spacing between text elements */
 }
 
 .menu {
-    position: absolute; /* Position relative to the Post container */
-    top: 16px; /* Align with the top padding of the Post container */
-    right: 16px; /* Align with the right padding of the Post container */
+    position: absolute;
+    top: 8px; /* Align closer to the top */
+    right: 8px; /* Align closer to the right */
 }
 
 .menuButton {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Slightly smaller menu button */
     cursor: pointer;
-    color:white;
+    color: white;
 }
 
 .menuOptions {
     position: absolute;
-    top: 20px;
+    top: 16px; /* Adjust for reduced padding */
     right: 0;
-    background-color: white;
+    background: #fff;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     z-index: 1000;
 }
 
 .menuOptions button {
     display: block;
     width: 100%;
-    padding: 5px 10px;
+    padding: 4px 8px; /* Reduce button padding */
     background: none;
     border: none;
     text-align: left;
     cursor: pointer;
+    font-size: 12px; /* Smaller button text */
 }
 
 .menuOptions button:hover {
-    background-color: #f0f0f0;
+    background: #f0f0f0;
 }
 
 .upvote {
-    background-color: transparent;
+    background: transparent;
     border: none;
     cursor: pointer;
-    font-size: 20px;
-    transition: color 0.2s ease;
+    font-size: 20px; /* Smaller upvote button */
+    transition: color 0.2s, transform 0.2s;
 }
 
 .upvote:hover {
-    transform: scale(1.3);
-}
-
-.postImg {
-    align-self: center;
-    width: 20%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 16px;
+    transform: scale(1.2); /* Slightly smaller hover effect */
 }

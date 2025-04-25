@@ -58,54 +58,33 @@ function Post({ id, user, postDate, title, anime, animeId, image, content, votes
     navigate(`/post-details/${id}`); // Redirect to PostDetails page with the post ID
   };
 
-  useEffect(() => {
-    const fetchAnimeImage = async () => {
-      try {
-        const response = await fetch(`${API_URL}/anime?filter[anime][id]=${animeId}&include=images`);
-        const data = await response.json();
-        console.log(data); // Log the response for debugging
-        setAnimeImg(data.anime?.[0].images[0].link); // Set the first image link or an empty string if not found
-      } catch (error) {
-        console.error('Error fetching anime image:', error);
-      }
+const VoteButton = ({ type, onClick }) => (
+  <button className="upvote" onClick={(e) => { e.stopPropagation(); onClick(type); }}>
+    {type === 'upvote' ? '👍' : '👎'}
+  </button>
+);
 
-      console.log(data);
-    };
-
-    if (animeId) {
-      fetchAnimeImage();
-    }
-  }, [animeId]);
-
-  console.log(animeImg);
-
-  return (
-    <div className="Post" onClick={handlePostClick} style={{ cursor: 'pointer' }}>
-      <label className="smallText">User: {user}</label>
-      <label className="smallText">Post Date: {postDate}</label>
-      <h2>{title}</h2>
-      <div className="postImgContainer">
-        {animeImg && <img className="postAnimImg" src={animeImg} alt={`${title} cover`} />}
-        <label className="smallText">{anime}</label>
-      </div>
-      <label className="smallText">{content}</label>
-      {image && <img className="postImg" src={image} alt={`${title} cover`} />}
-      <span className="votes">
-        <button className="upvote" onClick={(e) => { e.stopPropagation(); handleVote('upvote'); }}>👍</button>
-        {votes}
-        <button className="upvote" onClick={(e) => { e.stopPropagation(); handleVote('downvote'); }}>👎</button>
-      </span>
-      <div className="menu">
-        <button className="menuButton" onClick={(e) => { e.stopPropagation(); toggleMenu(); }}>⋮</button>
-        {showMenu && (
-          <div className="menuOptions">
-            <button onClick={(e) => { e.stopPropagation(); editPost(); }}>Edit</button>
-            <button onClick={(e) => { e.stopPropagation(); deletePost(e); }}>Delete</button>
-          </div>
-        )}
-      </div>
+return (
+  <div className="Post" onClick={handlePostClick} style={{ cursor: 'pointer' }}>
+    <label className="smallText">User: {user}</label>
+    <label className="smallText">Post Date: {postDate}</label>
+    <h2>{title}</h2>
+    <span className="votes">
+      <VoteButton type="upvote" onClick={handleVote} />
+      {votes}
+      <VoteButton type="downvote" onClick={handleVote} />
+    </span>
+    <div className="menu">
+      <button className="menuButton" onClick={(e) => { e.stopPropagation(); toggleMenu(); }}>⋮</button>
+      {showMenu && (
+        <div className="menuOptions">
+          <button onClick={(e) => { e.stopPropagation(); editPost(); }}>Edit</button>
+          <button onClick={(e) => { e.stopPropagation(); deletePost(e); }}>Delete</button>
+        </div>
+      )}
     </div>
-  );
+  </div>
+);
 }
 
 export default Post;

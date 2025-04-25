@@ -1,0 +1,13 @@
+.PostDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (default) */
+    margin: 0 auto; /* Center the container horizontally */
+    width: fit-content;
+}
+
+.postDetailsTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

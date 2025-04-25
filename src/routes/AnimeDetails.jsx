@@ -24,7 +24,6 @@ function AnimeDetails() {
 
         fetchPosts();
     }, []);
-    console.log(posts);
     
     useEffect(() => {
         const fetchAnimeDetails = async () => {
@@ -39,7 +38,6 @@ function AnimeDetails() {
                 setIsLoading(false); // Stop loading
             }
         };
-
         fetchAnimeDetails();
     }, [id]);
 
@@ -50,8 +48,6 @@ function AnimeDetails() {
     if (!anime) {
         return <div className="AnimeDetails">Anime details not found.</div>;
     }
-
-    console.log(anime); // Log the image URL for debugging
 
     return (
         <div className="AnimeDetails">

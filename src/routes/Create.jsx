@@ -68,7 +68,6 @@ function Create() {
             }
 
             alert('Post updated successfully!');
-            console.log('Post updated:', data);
             window.location = "/home"; // Redirect only after successful update
         } catch (error) {
             console.error('Error updating data:', error.message);
@@ -95,7 +94,6 @@ function Create() {
             }
 
             alert('Post created successfully!');
-            console.log('Post created:', data);
             window.location = "/home"; // Redirect only after successful insertion
         } catch (error) {
             console.error('Error inserting data:', error.message);
