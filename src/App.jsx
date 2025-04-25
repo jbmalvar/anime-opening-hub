@@ -6,6 +6,7 @@ import Create from './routes/Create'
 import Anime from './routes/Anime'
 import About from './routes/About'
 import AnimeDetails from './routes/AnimeDetails'
+import PostDetails from './routes/PostDetails'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/anime" element={<Anime />} />
           <Route path="/anime-details/:id" element={<AnimeDetails />} />
           <Route path="/about" element={<About />} />
+          <Route path="/post-details" element={<PostDetails />} />
         </Routes>
       </div>
     </div>
