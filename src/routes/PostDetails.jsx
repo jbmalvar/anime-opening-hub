@@ -159,7 +159,9 @@ function PostDetails() {
           </div>
           <h2 className="postTitle">{post.title}</h2>
           <p className="postContent">{post.content}</p>
-          <img className="postImage" src={post.image} alt="Post" />
+          {post?.image && post.image.trim() !== '' && (
+            <img className="postImage" src={post.image} alt="Post" />
+          )}
           <p>Opening:</p>
           <audio className="audioinPost" controls preload="auto">
             <source src={anime.animethemes?.[0]?.animethemeentries?.[0]?.videos?.[0]?.audio.link} type="audio/mpeg" />
