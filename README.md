@@ -71,6 +71,9 @@ Here's a walkthrough of implemented user stories:
 
 ![Untitled design (2)](https://github.com/user-attachments/assets/7ef41338-1ac6-4cd9-b67c-2bd806589412)
 
+
+Imgur Link in case: https://imgur.com/a/A5xy7cA
+
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
